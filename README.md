@@ -6,5 +6,4 @@ It's a simple high stakes game that has you quickly betting against the dealer! 
 
 The cards are randomized and will come with different values, its up to you to guess whether it'll be higher or lower! Sounds easy? *Looks* easy? Looks can be very deceiving...
 
-As Clint Eastwood once said:
 > Do you feel lucky?
