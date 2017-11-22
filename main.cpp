@@ -36,10 +36,10 @@ Player Guesser(Player player, int card1, int bet) {
   if (guess == "higher" || guess == "Higher") { // The answer is now not case sensitive
 	   if(card2 > card1){ // This means that the card you're guessing is higher that the first
 	   	cout << "That's right! 'Ave yer bet!" << endl; // If the card value is higher, then the user is right
-	   	player.buyin = player.buyin + bet; //Also, he wins the bet! The lucky bastard!
+	   	player.buyin = player.buyin + bet; //Also, the person wins the bet! The lucky devil!
 	   }else{
 	   	    cout << "Sorry, mate! That's wrong!" << endl; // Otherwise, if the card is NOT higher, he loses  
-	   	    player.buyin = player.buyin - bet; // And his bet is deducted! What a loser
+	   	    player.buyin = player.buyin - bet; // And his bet is deducted! What a loser!
 	   }
 	// Vice Versa
   } else if (guess == "lower" || guess == "Lower") { // See the first if statement
