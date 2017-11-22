@@ -5,15 +5,6 @@
 #include "Player.h"
 
 using namespace std;
-
-/* USER STORIES */
-/*As a user, I would like to be able to play the game
-  As a user, I would like to enter my name
-  As a user, I would like to have a card dealt
-  As a user, I would like to be able to guess either high or low
-  As a user, I would like to be able to bet a specific amount
-  As a user, I would like to win or lose with notification
-  As a user, I would like to to be able to leave the game when I want*/
   
 int cash;
 bool activated = true;
