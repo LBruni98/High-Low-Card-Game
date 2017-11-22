@@ -16,6 +16,7 @@ using namespace std;
   As a user, I would like to to be able to leave the game when I want*/
   
 int cash;
+bool activated = true;
 
 int pickCard() {
 	//srand(time(NULL)); //Randomizer for both
@@ -23,7 +24,8 @@ int pickCard() {
 	
   // Randomized cards
   card = rand() % 13 + 1; // 
-  //enum faces {Ace, Jack, Queen, King};
+  enum faces {Ace, Jack, Queen, King};
+  switch (card){
   return card;
 }
 
@@ -64,57 +66,81 @@ Player Guesser(Player player, int card1, int bet) {
   return player;
 }
 
-int main () {
+int main() {
   double bet; //Betting variable, allows the player to bet
   Player player = Player(); // Player's cash
+  char answer;
   
-  // Some artwork
-  cout << "Hi! Welcome to..." << endl;
-  cout << ".------..------..------..------..------..------..------..------." << endl;
-  cout << "|H.--. ||I.--. ||G.--. ||H.--. ||-.--. ||L.--. ||O.--. ||W.--. |" << endl;
-  cout << "| ://: || (//) || ://: || ://: || (//) || ://: || ://: || ://: |" << endl;
-  cout << "| (__) || ://: || ://: || (__) || ://: || (__) || ://: || ://: |" << endl;
-  cout << "| '--'H|| '--'I|| '--'G|| '--'H|| '--'-|| '--'L|| '--'O|| '--'W|" << endl;
-  cout << "`------'`------'`------'`------'`------'`------'`------'`------'" << endl;
-  cout << endl;
+  while (activated = true) {
+  	// Some artwork
+  	cout << "Hi! Welcome to..." << endl;
+  	cout << ".------..------..------..------..------..------..------..------." << endl;
+  	cout << "|H.--. ||I.--. ||G.--. ||H.--. ||-.--. ||L.--. ||O.--. ||W.--. |" << endl;
+  	cout << "| ://: || (//) || ://: || ://: || (//) || ://: || ://: || ://: |" << endl;
+  	cout << "| (__) || ://: || ://: || (__) || ://: || (__) || ://: || ://: |" << endl;
+  	cout << "| '--'H|| '--'I|| '--'G|| '--'H|| '--'-|| '--'L|| '--'O|| '--'W|" << endl;
+  	cout << "`------'`------'`------'`------'`------'`------'`------'`------'" << endl;
+  	cout << endl;
   
-  cout << "Right, mate! What's yer name?";
-  cin >> player.name; //Player enters their name
+  	cout << "Right, mate! What's yer name?";
+  	cin >> player.name; //Player enters their name
   
-  cout << "Great, " << player.name << ". But before we can start you need some greens" << endl;
-  cout << "How much you want to start with?";
-  cin >> player.starting_buyin; // Player inputs how much they want to start with
+  	cout << "Great, " << player.name << ". But before we can start you need some greens" << endl;
+  	cout << "How much you want to start with?";
+  	cin >> player.starting_buyin; // Player inputs how much they want to start with
   
-  player.buyin = player.starting_buyin; // Once the player inputs their amount, that's the balance throughout
+  	player.buyin = player.starting_buyin; // Once the player inputs their amount, that's the balance throughout
   
-  while (player.buyin > 0) {
-    cout << "Right, " << player.name << "! You 'ave £" << player.buyin << "." << endl;
+  	while (player.buyin > 0) {
+    	cout << "Right, " << player.name << "! You 'ave £" << player.buyin << "." << endl;
     
-    do {
-      cout << "Now, how much do you want to bet?";
-      cin >> bet;
+    	do {
+      	cout << "Now, how much do you want to bet?";
+      	cin >> bet;
       
-      if (bet > player.buyin) {
-        cout << "Hey, I'm not a bank! I can't loan you money! Bet within limits!\n";
-      }else{
+      	if (bet > player.buyin) {
+        	cout << "Hey, I'm not a bank! I can't loan you money! Bet within limits!\n";
+      	}else{
       	  cout << endl;
-      }
-    }while (bet == 0 || bet  > player.buyin);
+      	}
+    	}
+    	while (bet == 0 || bet  > player.buyin);
     
-  int card1 = pickCard(); // Card1 is gathered from the pickCard function
+  		int card1 = pickCard(); // Card1 is gathered from the pickCard function
   
-  cout << "Cash: £" << player.buyin; // Cash is displayed at the top
-  if (player.buyin <= 200) { // The critical amount
-    cout << " Watch it! You're almost out of money!"<< endl; // Sends a message if the user has a gambling problem
-  } else {
-    cout << endl; // Keeps the space clear and the user carries on as normal
-  }
-  cout <<"================="<< endl; // A E S T H E T I C S
-  cout <<"Your 1st card: " << card1 << endl; // Where the card value will be displayed
-  cout <<"================="<< endl; // A E S T H E T I C S
+  		cout << "Cash: £" << player.buyin; // Cash is displayed at the top
+  		if (player.buyin <= 200) { // The critical amount
+    		cout << " Watch it! You're almost out of money!"<< endl; // Sends a message if the user has a gambling problem
+			} else {
+    		cout << endl; // Keeps the space clear and the user carries on as normal
+  		}
+  		cout <<"================="<< endl; // A E S T H E T I C S
+  		cout <<"Your 1st card: " << card1 << endl; // Where the card value will be displayed
+  		cout <<"================="<< endl; // A E S T H E T I C S
 
-  player = Guesser(player, card1, bet);
+  		player = Guesser(player, card1, bet);
+  	}
   
+  	while(player.buyin < 1) {
+  		cout << "Well, it looks like yer bankrupt. 'Ere, do you want to 'ave another go?" << "\n";
+			cout << "(Y/N)";
+			cin >> answer;
+			if((answer == 'y')||(answer == 'Y')) {
+				cout << "Right, Let's get the money rollin'!"<< endl;
+				cout << "\n";
+				cout << "\n";
+				cout << "\n";
+				cout << "\n";
+				cout << "\n";
+				cout << "\n";
+				break;
+			} else if((answer == 'n')||(answer == 'N')) {
+				cout << "Thanks for playing! Hope ya get riches next time!";
+				activated == false;
+				return 0;
+			}
+  	}
   }
+  
   return 0;
 }
