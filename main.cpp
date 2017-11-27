@@ -7,7 +7,7 @@
 using namespace std;
   
 int cash;
-bool activated = true;
+bool activated = true; // An activated boolean to help with infinite play
 
 int pickCard() {
 	//srand(time(NULL)); //Randomizer for both
@@ -15,8 +15,8 @@ int pickCard() {
 	
   // Randomized cards
   card = rand() % 13 + 1; // 
-  enum faces {Ace, Jack, Queen, King};
-  switch (card){
+  //enum faces {Ace, Jack, Queen, King};
+  //switch (card){
   return card;
 }
 
@@ -36,10 +36,10 @@ Player Guesser(Player player, int card1, int bet) {
   if (guess == "higher" || guess == "Higher") { // The answer is now not case sensitive
 	   if(card2 > card1){ // This means that the card you're guessing is higher that the first
 	   	cout << "That's right! 'Ave yer bet!" << endl; // If the card value is higher, then the user is right
-	   	player.buyin = player.buyin + bet; //Also, the person wins the bet! The lucky devil!
+	   	player.buyin = player.buyin + bet; //Also, he wins the bet! The lucky bastard!
 	   }else{
 	   	    cout << "Sorry, mate! That's wrong!" << endl; // Otherwise, if the card is NOT higher, he loses  
-	   	    player.buyin = player.buyin - bet; // And his bet is deducted! What a loser!
+	   	    player.buyin = player.buyin - bet; // And his bet is deducted! What a loser
 	   }
 	// Vice Versa
   } else if (guess == "lower" || guess == "Lower") { // See the first if statement
@@ -60,9 +60,9 @@ Player Guesser(Player player, int card1, int bet) {
 int main() {
   double bet; //Betting variable, allows the player to bet
   Player player = Player(); // Player's cash
-  char answer;
+  char answer; // For yes or no answers
   
-  while (activated = true) {
+  while (activated = true) { // The game plays while it is active
   	// Some artwork
   	cout << "Hi! Welcome to..." << endl;
   	cout << ".------..------..------..------..------..------..------..------." << endl;
@@ -95,7 +95,7 @@ int main() {
       	  cout << endl;
       	}
     	}
-    	while (bet == 0 || bet  > player.buyin);
+    	while (bet == 0 || bet > player.buyin);
     
   		int card1 = pickCard(); // Card1 is gathered from the pickCard function
   
@@ -112,11 +112,12 @@ int main() {
   		player = Guesser(player, card1, bet);
   	}
   
-  	while(player.buyin < 1) {
+  	while(player.buyin < 1) { // While the player is dealing with the Taxman
+  		//Couple o' messages
   		cout << "Well, it looks like yer bankrupt. 'Ere, do you want to 'ave another go?" << "\n";
 			cout << "(Y/N)";
-			cin >> answer;
-			if((answer == 'y')||(answer == 'Y')) {
+			cin >> answer; // Player puts yes or no
+			if((answer == 'y')||(answer == 'Y')) { // If the player wants to continue the game...
 				cout << "Right, Let's get the money rollin'!"<< endl;
 				cout << "\n";
 				cout << "\n";
@@ -124,11 +125,11 @@ int main() {
 				cout << "\n";
 				cout << "\n";
 				cout << "\n";
-				break;
+				break; // loop is ended and the player can play again
 			} else if((answer == 'n')||(answer == 'N')) {
 				cout << "Thanks for playing! Hope ya get riches next time!";
-				activated == false;
-				return 0;
+				activated == false; // Boolean is deactivated and the game ends
+				return 0; // just for good measure
 			}
   	}
   }
