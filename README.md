@@ -7,3 +7,12 @@ It's a simple high stakes game that has you quickly betting against the dealer! 
 The cards are randomized and will come with different values, its up to you to guess whether it'll be higher or lower! Sounds easy? *Looks* easy? Looks can be very deceiving...
 
 > Do you feel lucky?
+
+#### Scrum Backlog
+* As a user, I would like to be able to play the game
+* As a user, I would like to enter my name
+* As a user, I would like to have a card dealt
+* As a user, I would like to be able to guess either high or low
+* As a user, I would like to be able to bet a specific amount
+* As a user, I would like to win or lose with notification
+* As a user, I would like to to be able to leave the game when I want
