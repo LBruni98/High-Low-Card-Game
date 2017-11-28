@@ -16,3 +16,5 @@ The cards are randomized and will come with different values, its up to you to g
 * As a user, I would like to be able to bet a specific amount
 * As a user, I would like to win or lose with notification
 * As a user, I would like to to be able to leave the game when I want
+
+#### Flowchart
