@@ -31,7 +31,7 @@ The cards are randomized and will come with different values, its up to you to g
 * As a user, I would like to to be able to leave the game when I want
 
 #### Flowchart
-![Flowchart]()
+![Flowchart](https://github.com/LBruni98/High-Low-Card-Game/blob/master/Untitled%20Diagram.jpg)
 
 ## Creation and Implementation
 #### IDE
