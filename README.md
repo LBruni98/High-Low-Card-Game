@@ -148,10 +148,12 @@ This function makes the user input a bet and stores it for the round. If the pla
 These two functions are for when the player guesses the value of their card. The parameters are the same and are called whether the player is right or wrong.
 
 ![Betting in Action](https://github.com/LBruni98/High-Low-Card-Game/blob/master/Project%202%20-%20Proof%205.PNG)
+
 The player inputs their bet.
 
 ![Correct!](https://github.com/LBruni98/High-Low-Card-Game/blob/master/Project%202%20-%20Proof%206.PNG)
 ![Wrong](https://github.com/LBruni98/High-Low-Card-Game/blob/master/Project%202%20-%20Proof%207.PNG)
+
 When the player is right or wrong.
 
 ## Research
