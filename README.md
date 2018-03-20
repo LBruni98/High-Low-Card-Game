@@ -74,9 +74,36 @@ Overall, the implementation of the code would be considered adequete compared to
 The IDE used was [repl.it](https://repl.it/) which is an online IDE that covers numerous programming languages other than C++ and can help out immensely, such as the ability to create webpages with HTML. It was used for this task and helped with the development of the program, because it had the fundamentals of a common IDE such as syntax highlighting and is a code interpreter and can also the code can be directly link to the github account. Though the downsides were that this is more or less a simple IDE and some errors were hard to solve without the help of the internet, something that could've been easier with a proper IDE.
 
 #### Coding Standards
-Coding Standards are a set of guidelines for a developer to follow in order to create high quality code. These guidelines help a developer write in a specific way that best suits that language. It works because developers would have written in their own style when others would write their code in a different style; different indentation, naming of functions and commenting. If in a workplace environment, setting a standard for coders would help, so to improve readability of the code and helps with editing and modifying.
+In regards to the coding standards being used for my project, I chose a format that would basically help me, and hopefully others with the readibility of the code. Proper indentation used by the functions ensured that functions were determined easier. For instance, here is one such function:
+```cpp
+int pickCard() {
+	//srand(time(NULL)); //Randomizer for both
+	int card;
+	
+  // Randomized cards
+  card = rand() % 13 + 1; // Randomizes numbers between 13 and 1
+  //enum faces {Ace, Jack, Queen, King};
+  //switch (card){
+  return card; // Return the card face
+}
 
-In regards to the coding standards being used for my project, I chose a format that would basically help me, and hopefully others with the readibility of the code. Proper indentation used by the functions ensured that functions were determined easier and the opening bracket right next to the function to help me define the proper start point and wouldn't get lost, which on the whole, helped me with development understanding what function made up the code within the program. This doesn't only cover functions but also, helps with other things such as loops. Function and variable names are simplistic which should suit both the needs of the reader and developer, to tell them instantly by looking at them, what they are, any complicated names would just cause confusion or fly over people's heads. Finally, commenting is done to help with the fixing of code and also tells the reader examining said code what each function and feature does, also helping me with adding notes to the code and providing an outline as to what I'll write.
+```
+The opening bracket right next to the function(```int pickCard() {```) rather than below to help me define the proper start point and wouldn't get lost, which on the whole, helped me with development understanding what function made up the code within the program. This doesn't only cover functions but also, helps with other things such as loops. The most important aspect of this is that the funtion isn't all forced into one line, so he reader can instantly interpret it
+Function and variable names are simplistic which should suit both the needs of the reader and developer. For example, ``` pickCard ``` was formatted to allow easier recognition of functions; it tells me what the function is right off the bat and the uppercase makes it readable and stands out from other functions
+Finally, the commented code:
+```cpp
+int pickCard() {
+	//srand(time(NULL)); //Randomizer for both
+	int card;
+	
+  // Randomized cards
+  card = rand() % 13 + 1; // Randomizes numbers between 13 and 1
+  //enum faces {Ace, Jack, Queen, King};
+  //switch (card){
+  return card; // Return the card face
+}
+```
+The comments here help with determining a function and also help with fixing errors or bugs. Comments were also used as notes for helping during development.
 
 * [The main code file](https://github.com/LBruni98/High-Low-Card-Game/blob/master/main.cpp)
 * [The player code file](https://github.com/LBruni98/High-Low-Card-Game/blob/master/Player.h)
